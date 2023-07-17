@@ -1,0 +1,25 @@
+include toc
++make_toc(false)
+
+.sidebar.animated.fadeInDown
+  .sidebar-top
+    .logo-title
+      .title
+        .logo(style=theme.logo_style)
+          .box1
+            .box2
+              img(src= url_for(theme.logo), alt="logo")
+        h3(title="")
+          a(href="/")= config.author
+        if config.description
+          .description
+            p!= config.description
+        else
+          .description
+            p!= theme.description
+      include social_links
+    
+    include toc
+    +make_toc(true)
+  
+  include footer
